@@ -34,6 +34,7 @@ create_calendar <- function(birthdate, col_past, col_future) {
   #col_future <- "#ff0000"
 
   # check for correct inputs
+  # TODO regexpattern checks for all numbers and letters, not only hex
   if (!is.Date(birthdate)) {
     stop("birthdate must be a date")
   } else if (!grepl(pattern = "#{1}[[:alnum:]]{6}", col_past)) {
@@ -42,9 +43,11 @@ create_calendar <- function(birthdate, col_past, col_future) {
     stop("col_past must be a RGB color")
   }
 
+  # TODO add font support
+  # font <- "serif"
+
   # user input
   today <- today()
-  # font <- "serif"
 
   # set colors
   mycol <- c(
@@ -66,12 +69,15 @@ create_calendar <- function(birthdate, col_past, col_future) {
     caldf <- rbind(caldf, entry)
   }
 
+  # weeks and years have to be discrete for shapes
   caldf$year <- as.factor(caldf$year)
   caldf$week <- as.factor(caldf$week)
 
-  caldf$id <- as.integer(rownames(caldf))
-
+  # get current week number for comparisoni
   currentweek <- as.integer(((today - birthdate)) / 7)
+
+  # add rownames as id for checking against current week
+  caldf$id <- as.integer(rownames(caldf))
 
   caldf <- caldf %>%
     mutate(passed = ifelse(id < currentweek, "1", "0"))
@@ -99,6 +105,8 @@ create_calendar <- function(birthdate, col_past, col_future) {
     ) +
     scale_y_discrete(breaks = seq(5, 80, by = 5), limits = rev) +
     scale_x_discrete(breaks = seq(5, 80, by = 5), position = "top")
+
+
 
   return(calplot)
 }
