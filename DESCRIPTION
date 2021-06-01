@@ -1,0 +1,21 @@
+Package: calendar4kweeks
+Title: 4k weeks calendar done in R with ggplot
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Til",
+           family = "Schuenemann",
+           role = c("aut", "cre"),
+           email = "first.last@example.com")
+Description: 4k weeks calendar done in R with ggplot
+License: AGPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+  dplyr,
+  lubridate,
+  ggplot2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
