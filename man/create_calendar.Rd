@@ -4,12 +4,12 @@
 \alias{create_calendar}
 \title{Create a 4k weeks calendar!}
 \usage{
-create_calendar(birthdate, col_past, col_future)
+create_calendar(birthdate, passed_color = "#000000", future_color = "#000000")
 }
 \arguments{
-\item{birthdate}{your birthdate}
+\item{birthdate}{your birthdate, format: yyyy-mm-dd}
 
-\item{col_past}{rgb color for passed weeks}
+\item{passed_color}{rgb color for passed weeks}
 
 \item{col_future}{rgb color for future weeks}
 }

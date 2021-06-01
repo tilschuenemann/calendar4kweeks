@@ -19,3 +19,11 @@ This program creates a calendar; mapping each year and week of an 80
 year lifespan and filling in the passed time. Custom colors supported.
 
 ## Usage
+
+> create_calendar(birthdate, passed_color, future_color)
+
+## To DO
+
+-   replace for loop with something appropriate
+
+-   

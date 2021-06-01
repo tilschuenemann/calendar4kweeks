@@ -27,3 +27,13 @@ This program creates a calendar; mapping each year and week of an 80 year lifesp
 
 ## Usage
 
+> create_calendar(birthdate, passed_color, future_color)
+
+
+## To DO
+
+* replace for loop with something appropriate
+
+* look into tryCatch
+
+* fix regexpattern for color check
