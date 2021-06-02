@@ -6,10 +6,11 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![Codecov test
 coverage](https://codecov.io/gh/tilschuenemann/calendar4kweeks/branch/master/graph/badge.svg)](https://codecov.io/gh/tilschuenemann/calendar4kweeks?branch=master)
 [![R-CMD-check](https://github.com/tilschuenemann/calendar4kweeks/workflows/R-CMD-check/badge.svg)](https://github.com/tilschuenemann/calendar4kweeks/actions)
+
 <!-- badges: end -->
 
 calendar4kweeks is a R+ggplot2 clone of the [4k weeks
@@ -58,8 +59,5 @@ myplot <- create_calendar(lubridate::today())
 > ![An example of the empty 4k weeks calendar](./inst/4kweeks_empty.png)
 
 You could use this picture for printing or generate one yourself. For
-more details:
-
-``` r
-?ggsave
-```
+more details take a loot at
+[ggsave](https://ggplot2.tidyverse.org/reference/ggsave.html).
