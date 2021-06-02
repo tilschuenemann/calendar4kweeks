@@ -6,7 +6,7 @@ Authors@R:
            family = "Schuenemann",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: 4k weeks calendar done in R with ggplot
+Description: 4k Weeks Calendar Done In R With Ggplot
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
