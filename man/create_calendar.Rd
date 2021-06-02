@@ -4,14 +4,10 @@
 \alias{create_calendar}
 \title{Create a 4k weeks calendar!}
 \usage{
-create_calendar(birthdate, passed_color = "#000000", future_color = "#000000")
+create_calendar(birthdate)
 }
 \arguments{
 \item{birthdate}{your birthdate, format: yyyy-mm-dd}
-
-\item{passed_color}{rgb color for passed weeks}
-
-\item{col_future}{rgb color for future weeks}
 }
 \value{
 4k weeks calendar as ggplot object
