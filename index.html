@@ -72,22 +72,48 @@
 <!-- badges: start -->
 
 <p>calendar4kweeks is a R+ggplot2 clone of the <a href="https://4kweeks.com/">4k weeks calendar</a>.</p>
-<p>This program creates a calendar; mapping each year and week of an 80 year lifespan and filling in the passed time. Custom colors supported.</p>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
+<p>This program creates a calendar; mapping each year and week of an 80 year lifespan and filling in the passed time.</p>
+<div id="usage" class="section level3">
+<h3 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h3>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/tilschuenemann/calendar4kweeks">"calendar4kweeks"</a></span><span class="op">)</span>
+
+<span class="fu"><a href="reference/create_calendar.html">create_calendar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1990-01-01"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <blockquote>
-<p>create_calendar(birthdate, passed_color, future_color)</p>
+<p><img src="./inst/4kweeks_example.png" alt="An example of the 4k weeks calendar"></p>
 </blockquote>
 </div>
-<div id="to-do" class="section level2">
-<h2 class="hasAnchor">
-<a href="#to-do" class="anchor"></a>To DO</h2>
-<ul>
-<li><p>replace for loop with something appropriate</p></li>
-<li>
-</li>
-</ul>
+<div id="saving-plot-to-disc" class="section level3">
+<h3 class="hasAnchor">
+<a href="#saving-plot-to-disc" class="anchor"></a>Saving plot to disc</h3>
+<p>If you want to save your plot to your disc, use ggsave as a start:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/tilschuenemann/calendar4kweeks">"calendar4kweeks"</a></span><span class="op">)</span>
+
+<span class="va">myplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/create_calendar.html">create_calendar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"1990-01-01"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="va">myplot</span>,
+                filename <span class="op">=</span> <span class="st">"4kweeks.png"</span>,
+                width <span class="op">=</span> <span class="fl">21</span>,
+                height <span class="op">=</span> <span class="fl">29</span>,
+                units <span class="op">=</span> <span class="st">"cm"</span>,
+                device <span class="op">=</span> <span class="st">"png"</span>,
+                limitsize <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="empty-calendar" class="section level3">
+<h3 class="hasAnchor">
+<a href="#empty-calendar" class="anchor"></a>Empty calendar</h3>
+<p>In case you want to create an empty calendar, just fill in todays date:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/tilschuenemann/calendar4kweeks">"calendar4kweeks"</a></span><span class="op">)</span>
+<span class="va">myplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/create_calendar.html">create_calendar</a></span><span class="op">(</span><span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="http://lubridate.tidyverse.org/reference/now.html">today</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<blockquote>
+<p><img src="./inst/4kweeks_empty.png" alt="An example of the empty 4k weeks calendar"></p>
+</blockquote>
+<p>You could use this picture for printing or generate one yourself. For more details:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="op">?</span><span class="va">ggsave</span></code></pre></div>
 </div>
 </div>
   </div>
